@@ -65,8 +65,8 @@
 
   </div>
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery.redirect@1.1.4/jquery.redirect.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
   <script>
   function login()
   {
@@ -75,6 +75,7 @@
       if($("#inputPassword").val().length > 3)
       {
         alert("fdfdf")
+       
         $().redirect('memberarea.html', {'user': $("#inputEmail").val});
       }
       else{
@@ -88,8 +89,8 @@
   }
   </script>
  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.easing.min.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
 </body>
 </html>
