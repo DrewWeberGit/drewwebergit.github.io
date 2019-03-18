@@ -5,17 +5,19 @@
 
   <title>Member Area</title>
 
-  <!-- Custom styles for this template-->
+  <!-- All CSS inmports we need -->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
 
-  <meta charset="utf-8">
+<!-- Viewpoint setting to work on mobile-->
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body class="">
+
 
 
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -25,7 +27,7 @@
 
           <div class="row">
 
-  
+    <!-- Take picture button -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body" id="pictureButton">
@@ -39,33 +41,36 @@
               </div>
             </div>
 
+<!-- Take picture modal -->
   <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aaria-hidden="true">
     <div class="modal-dialog">
 
         <div class="modal-content">
       
 
+              <!-- Header -->
                 <div class="modal-header">
                     <h2 class="modal-title card-title text-center">Picture</h2>
+                     <!-- reset data on modal hide -->
                     <a href="#" class="btn btn-info btn-icon-split" onclick="$('#pictureModal').modal('hide');">
-                        <span class="icon text-white-50">
+                         <!-- FontAwesome icon -->
+                      <span class="icon text-white-50">
                             <i class="fas fa-times"></i>
                         </span>
     
                       </a>
                 </div>
 
+                  <!-- Body -->
                 <div class="modal-body">
                     <div class="row">
                         <div class="tab-content text-center container-fluid">
                         
-                          
-
-
                                   <div class="card">
-                                      
                                       <div class="card-body">
                                         <h5 class="card-title">Options</h5>
+
+                                        <!-- take picture on click -->
                                         <a href="#" class="btn btn-info btn-icon-split" onclick="displayFridge()">
                                             <span class="icon text-white-50">
                                                 <i class="fa fa-camera-retro"></i>
@@ -73,6 +78,7 @@
                                             <span class="text">Take picture</span>
                                           </a>
             
+                                           <!-- generate list on click -->
                                             <a href="#" class="btn btn-info btn-icon-split" onclick="genList()">
                                                 <span class="icon text-white-50">
                                                     <i class="fas fa-list-ol"></i>
@@ -91,7 +97,7 @@
                 
                                       </div>
                                     </div>
-
+                                    <!-- JS fucntions we are using in this modal only -->
                                     <script>
                                         function displayFridge() {
                                           document.getElementById("frideImg").style.display = "block";
@@ -115,6 +121,8 @@
         </div>
     </div>
 
+     <!-- Current Temp button -->
+
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
@@ -129,6 +137,7 @@
             </div>
 
         
+             <!-- Settings button -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-info shadow h-100 py-2">
                 <div class="card-body" id="settingsButton">
@@ -142,6 +151,7 @@
                 </div>
               </div>
 
+               <!-- Settings modal -->
               <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aaria-hidden="true">
                   <div class="modal-dialog">
               
@@ -157,6 +167,7 @@
                                   <div class="row">
                                       <div class="tab-content text-center fluid container-fluid">
           
+                                         <!-- Account infomation -->
                                                 <div class="card">
                                                     
                                                     <div class="card-body">
@@ -171,11 +182,7 @@
                                                       <p>Service paid for till: Dec 11 , 2020</p> 
                                                     </div>
                                                   </div>
-              
-                                                  <script>
-                                            
-                                                    </script>
-              
+
                                       </div>
                                   </div>
                               </div>
@@ -189,11 +196,13 @@
 
         
           
+           <!-- Jquery loaded before our document scripts -->
           <script src="js/jquery.min.js"></script>
 
           <script>
               $(document).ready(function()
               {
+                //onclick events for buttons 
                   $('#pictureButton').click(function(){
                       $('#pictureModal').modal('show')
                   });
@@ -203,6 +212,7 @@
                   });
           
 
+                  //When the user closes/ hides the modal reset the data
                   $('#pictureModal').on('hidden.bs.modal', function () {
                 
                     $("#frideImg").css("display", "none");
@@ -210,10 +220,12 @@
                     $("#groceryList").css("display", "none");
                   });
 
+                  // Generate random Iint from 0 - int
                   function getRandomInt(max) {
                     return Math.floor(Math.random() * Math.floor(max));
                   }
 
+                  //Change temp every 1 second
                   setInterval(function()
                   { 
                     $("#currentTemp").html(3 + getRandomInt(3) + "c");
@@ -223,6 +235,8 @@
         
     
           </script>
+
+  <!-- Other JS we need in the body-->
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/jquery.easing.min.js"></script>
   <script src="js/sb-admin-2.min.js"></script>
