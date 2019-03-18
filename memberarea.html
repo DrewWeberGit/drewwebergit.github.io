@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Member Area</title>
+
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
+</head>
+<body class="">
+
+
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">ICU Area</h1>
+            <h2 class="h3 mb-0 text-gray-800" id="userID">UserID</h2>
+          </div>
+
+          <div class="row">
+
+  
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body" id="pictureButton">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-lg font-weight-bold text-primary text-uppercase mb-1">Picture</div>
+                      <div class="text-xs mb-0 font-weight-bold text-gray-800">Get a picture of the inside of your fridge</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+  <div class="modal fade" id="pictureModal" tabindex="-1" role="dialog" aaria-hidden="true">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+      
+
+                <div class="modal-header">
+                    <h2 class="modal-title card-title text-center">Picture</h2>
+                </div>
+
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="tab-content text-center container-fluid">
+                        
+                          
+
+
+                                  <div class="card">
+                                      
+                                      <div class="card-body">
+                                        <h5 class="card-title">Options</h5>
+                                        <a href="#" class="btn btn-info btn-icon-split" onclick="displayFridge()">
+                                            <span class="icon text-white-50">
+                                                <i class="fa fa-camera-retro"></i>
+                                            </span>
+                                            <span class="text">Take picture</span>
+                                          </a>
+            
+                                            <a href="#" class="btn btn-info btn-icon-split" onclick="genList()">
+                                                <span class="icon text-white-50">
+                                                    <i class="fas fa-list-ol"></i>
+                                                </span>
+                                                <span class="text">Generate List</span>
+                                              </a>
+      
+
+                                              <div class="card-body" id="groceryList" style="display:none">
+                                                  Bread<br>
+                                                  Eggs<br>
+                                                </div>
+
+                                              <img class="card-img-top" id="frideImg" src="img/01tmag-fridges-slide-Y1U5-superJumbo.jpg" alt="Card image cap" style="display:none">
+
+                
+                                      </div>
+                                    </div>
+
+                                    <script>
+                                        function displayFridge() {
+                                          document.getElementById("frideImg").style.display = "block";
+                                        }
+
+                                        function genList() {
+                                          if(document.getElementById("frideImg").style.display == "block")
+                                          {
+                                            document.getElementById("groceryList").style.display = "block";
+                                          }
+                                          else {alert("Please take a picture first");}
+                                        }
+                                      </script>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-lg font-weight-bold text-success text-uppercase mb-1">Temperature</div>
+                      <div class="text-lg mb-0 font-weight-bold text-gray-800" id="currentTemp">0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body" id="settingsButton">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-lg font-weight-bold text-info text-uppercase mb-1">Settings</div>
+                      <div class="text-xs mb-0 font-weight-bold text-gray-800">Go to the settings of your fridge</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aaria-hidden="true">
+                  <div class="modal-dialog">
+              
+                      <div class="modal-content">
+                              <div class="modal-header">
+                                  <h2 class="modal-title card-title text-center">Settings</h2>
+                              </div>
+              
+                              <div class="modal-body">
+                                  <div class="row">
+                                      <div class="tab-content text-center fluid container-fluid">
+          
+                                                <div class="card">
+                                                    
+                                                    <div class="card-body">
+                                                      <h4 class="card-title">Account info</h4>
+                                                      <h5><Email:test></Email:test></h5>
+                                                      <h5>Device List:</h5>
+                                                      <ul>
+                                                          <li>Home Fride</li>
+                                                          <li>Work Fridge</li>
+                                                      </ul> 
+                                                      <h5>Credit Info:</h5>
+                                                      <p>Service paid for till: Dec 11 , 2020</p> 
+                                                    </div>
+                                                  </div>
+              
+                                                  <script>
+                                            
+                                                    </script>
+              
+                                      </div>
+                                  </div>
+                              </div>
+              
+                          </div>
+              
+                      </div>
+                  </div>
+
+          </div>
+
+        
+          
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+          <script>
+              $(document).ready(function()
+              {
+                 var name = $_GET('user') + "";
+
+                 if(name.length < 1)
+                 {
+                  $.redirect('index.html');
+                 }
+                 else{
+                  $("#userID").text(name);
+                 }
+
+                  $('#pictureButton').click(function(){
+                      $('#pictureModal').modal('show')
+                  });
+          
+                  $('#settingsButton').click(function(){
+                      $('#settingsModal').modal('show')
+                  });
+          
+
+                  $('#pictureModal').on('hidden.bs.modal', function () {
+                
+                    $("#frideImg").css("display", "none");
+            
+                    $("#groceryList").css("display", "none");
+                  });
+
+                  function getRandomInt(max) {
+                    return Math.floor(Math.random() * Math.floor(max));
+                  }
+
+
+                  // from steven on https://stackoverflow.com/questions/814613/how-to-read-get-data-from-a-url-using-javascript
+                  function $_GET(q,s) {
+                    s = (s) ? s : window.location.search;
+                    var re = new RegExp('&amp;'+q+'=([^&amp;]*)','i');
+                    return (s=s.replace(/^\?/,'&amp;').match(re)) ?s=s[1] :s='';
+                }
+
+                  setInterval(function()
+                  { 
+                    $("#currentTemp").html(3 + getRandomInt(3) + "c");
+                  }, 1000);
+                });
+
+        
+    
+          </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="js/sb-admin-2.min.js"></script>
+</body>
+</html>
