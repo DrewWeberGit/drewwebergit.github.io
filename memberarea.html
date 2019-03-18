@@ -180,16 +180,6 @@
           <script>
               $(document).ready(function()
               {
-                 var name = $_GET('user') + "";
-
-                 if(name.length < 1)
-                 {
-                  $.redirect('index.html');
-                 }
-                 else{
-                  $("#userID").text(name);
-                 }
-
                   $('#pictureButton').click(function(){
                       $('#pictureModal').modal('show')
                   });
@@ -209,14 +199,6 @@
                   function getRandomInt(max) {
                     return Math.floor(Math.random() * Math.floor(max));
                   }
-
-
-                  // from steven on https://stackoverflow.com/questions/814613/how-to-read-get-data-from-a-url-using-javascript
-                  function $_GET(q,s) {
-                    s = (s) ? s : window.location.search;
-                    var re = new RegExp('&amp;'+q+'=([^&amp;]*)','i');
-                    return (s=s.replace(/^\?/,'&amp;').match(re)) ?s=s[1] :s='';
-                }
 
                   setInterval(function()
                   { 
