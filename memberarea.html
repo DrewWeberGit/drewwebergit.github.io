@@ -22,7 +22,7 @@
 
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">ICU Area</h1>
-            <h2 class="h3 mb-0 text-gray-800" id="userID">v1.3</h2>
+            <h2 class="h3 mb-0 text-gray-800" id="fridgeID"></h2>
           </div>
 
           <div class="row">
@@ -88,11 +88,10 @@
 
 
                                               <div class="card-body" id="groceryList" style="display:none">
-                                                  Bread<br>
-                                                  Eggs<br>
+                                                 
                                                 </div>
 
-                                              <img class="card-img-top" id="frideImg" src="img/01tmag-fridges-slide-Y1U5-superJumbo.jpg" alt="Card image cap" style="display:none">
+                                              <img class="card-img-top" id="frideImg" alt="Card image cap" style="display:none">
 
                 
                                       </div>
@@ -217,10 +216,10 @@
                                                             Devices
                                                           </button>
                                                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 38px, 0px);">
-                                                            <a class="dropdown-item" href="#home">Home</a>
-                                                            <a class="dropdown-item" href="#work">Work</a>
+                                                            <a class="dropdown-item" onclick="currentFride = 1">Home</a>
+                                                            <a class="dropdown-item" onclick="currentFride = 2">Work</a>
                                                           </div>
-
+                                                      <br>
                                                       <h5>Credit Info:</h5>
                                                       <p>Service paid for till: Dec 11 , 2020</p> 
                                                     </div>
@@ -243,6 +242,8 @@
           <script src="js/jquery.min.js"></script>
 
           <script>
+
+            var currentFride = 1;
               $(document).ready(function()
               {
                 //onclick events for buttons 
@@ -277,6 +278,30 @@
                   { 
                     $("#currentTemp").html(3 + getRandomInt(3) + "c");
                   }, 1000);
+                
+
+                //check for state change of frige every 3 seconds
+                var last = 0;
+                setInterval(function()
+                  { 
+                    //fridge changed 
+                    if(currentFride != last)
+                    {
+                      if(currentFride == 1)
+                      {
+                        $("#frideImg").attr("src","img/home.jpg");
+                        $("#fridgeID").html("Home");
+                        $("#groceryList").html("Eggs<br>Bacon<br>Bread");
+                      }
+                      else
+                      {
+                     
+                        $("#frideImg").attr("src","img/work.jpg");
+                        $("#fridgeID").html("Work");
+                        $("#groceryList").html("Mustard<br>Ketchup<br>");
+                      }
+                    }
+                  }, 3);
                 });
 
         
