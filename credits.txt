@@ -1,11 +1,17 @@
-FontAwesome :
+FontAwesome : https://fontawesome.com/
+
+Libs Used :
 https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css
 
-jQuery : 
+jQuery : https://jquery.com/
+Libs used
 https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
 https://cdn.jsdelivr.net/npm/jquery.redirect@1.1.4/jquery.redirect.js
 https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js
 https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js
+
+Charts : 
+http://chartjs.org/
 
 SB framework :
 https://startbootstrap.com/previews/sb-admin-2/
